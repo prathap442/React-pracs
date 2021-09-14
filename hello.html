@@ -6,17 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js" ></script>
     <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <title>Document</title> 
 </head>
 <body id="root">
 </body>
 </html>
 
-<script>
-   var ulElement = React.createElement('ul', {class: "product_listings"},
-    React.createElement('li', {id: 'product_1'}, 'NodeJs'),
-    React.createElement('li', {id: 'product_2'}, 'Javascript'),
-    React.createElement('li', {id: 'product_3'}, 'React')
-   )
-   ReactDOM.render(ulElement, document.getElementById('root'))
+<script type="text/babel">
+  const place = 'Bengaluru'
+  const fruits = ['Apple', 'Mango', 'Pomegranate']
+  const h1 = <h1> We are currently in {place} And the fruits available here are 
+    <ul>
+      <li>{fruits[0]}</li>
+      <li>{fruits[1]}</li>
+      <li>{fruits[2]}</li>
+    </ul>
+    <ul> Displaying Comman seperated {fruits.join(",")}</ul>
+    </h1>
+  ReactDOM.render(h1, document.getElementById('root'))
 </script>

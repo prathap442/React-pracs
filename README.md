@@ -37,6 +37,13 @@ JSX --> Stands for JAvascript XML
  - We load the Library of the Babel 
   using <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   - Generally babel is used to convert the ES6 syntax to the ES5 for the browser to understand and it also does the Job of converting JSX to the React Html
+  - When we write the JSX syntax script type="text/babel"
+```
 
+
+```
+  What is embeedding string in JSX?
+  const place = 'Bengaluru'
+  const h1 = <h1> We are currently in {place}</h1>
 ```
 
