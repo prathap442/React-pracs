@@ -47,3 +47,7 @@ JSX --> Stands for JAvascript XML
   const h1 = <h1> We are currently in {place}</h1>
 ```
 
+```
+ We learn how to embed function in the JSX
+ We learn how to embed an Object information into the Html page
+```

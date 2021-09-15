@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js" ></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title> 
+</head>
+<body id="root">
+</body>
+</html>
+
+<script type="text/babel">
+  const infos = [
+    {
+        source: "Bangalore",
+        destination: "mysore",
+        distance: "144Kms",
+        place: "palace"
+    },
+    {
+        source: "Chandigarh",
+        destination: "Haasan",
+        distance: "1044Kms",
+        place: "Melukote"
+    },
+  ];
+  const tableHandler = <table border="2">
+    <thead>
+      <tr>
+        <th>Source</th>
+        <th>Destination</th>
+        <th>PlaceToVisit</th>
+        <th>Distance in Kms</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>{infos[0].source}</td>
+          <td>{infos[0].destination}</td>
+          <td>{infos[0].place}</td>
+          <td>{infos[0].distance}</td>  
+        </tr>
+        <tr>
+          <td>{infos[1].source}</td>
+          <td>{infos[1].destination}</td>
+          <td>{infos[1].place}</td>
+          <td>{infos[1].distance}</td>  
+        </tr>
+    </tbody>
+  </table>
+  ReactDOM.render(tableHandler, document.getElementById('root'))
+</script>
