@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/react-minified.js" ></script>
+    <script src="./js/react-dom-minfied.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title> 
+</head>
+<body id="root">
+</body>
+</html>
+
+<script type="text/babel">
+  const info = [{
+    source: "Bangalore",
+    destination: "mysore",
+    distance: "144Kms",
+    place: "palace"
+  },
+  {
+    source: "Bangalore",
+    destination: "Ooty",
+    distance: "344Kms",
+    place: "Beach"
+  }
+  ]
+
+  const add = function(a,b){
+    return a+b
+  }
+  const rootHandler = document.getElementById('root')
+
+  //We can even return html out of the Function since we have JSX now .
+  const places_returner =  (
+    <div>
+      <span>The list of the places are:</span>
+      <ul>{info.map((singleInfo)=>{ return <li>Source:{singleInfo.source} Destination: {singleInfo.destination} distance: {singleInfo.distance} Place: {singleInfo.place} </li>})}</ul>
+    </div>    
+  )
+
+  const getUserInfos = (users)=>{
+    return users.map((userInfo)=>{ return <tr key={userInfo.userId}><td>{userInfo.userId}</td><td>{userInfo.title}</td></tr> })
+  }
+    
+  const divHandler = (users)=>{
+    return (<div>
+    <span>the sum of 10 + 20 is {10+20}; Which means we can embed additions of the numbers in the Templates</span>
+    <table border="2">
+      <thead>
+        <tr>
+            <th>UserId</th>
+            <th>Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        {getUserInfos(users)}
+      </tbody>
+    </table>
+  </div>)}
+
+    let users = []
+    let xhr = new XMLHttpRequest()
+    xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos')
+    xhr.onreadystatechange = function(){
+      if((xhr.readyState == 4)&& (xhr.status == 200)){
+        users = JSON.parse(xhr.responseText)
+        console.log(users)
+        ReactDOM.render(divHandler(users), rootHandler)
+      }
+    }
+    xhr.send()
+</script>

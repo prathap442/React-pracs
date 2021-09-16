@@ -51,3 +51,23 @@ JSX --> Stands for JAvascript XML
  We learn how to embed function in the JSX
  We learn how to embed an Object information into the Html page
 ```
+
+Need to complete yet with the following things
+```
+* React Components
+* Props Passing
+
+```
+
+Ajax Based building up of the Content
+```
+let xhr = new XMLHttpRequest()
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos')
+xhr.onreadystatechange = function(){
+  if((xhr.readyState == 4)&& (xhr.status == 200)){
+    let users = JSON.parse(xhr.responseText)
+    console.log(users)
+  }
+}
+xhr.send()
+```
